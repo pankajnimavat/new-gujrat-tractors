@@ -3,350 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Gujrat Tractors | Premium Industrial & Road Roller Parts Kolkata</title>
+    <title>New Gujrat Tractors - Product Catalogue</title>
     <style>
-        /* Modern CSS Variables for Styling */
+        /* Base Reset & Variables */
         :root {
-            --primary-color: #e67e22; /* Industrial Orange */
-            --secondary-color: #2c3e50; /* Deep Machinery Navy */
-            --light-bg: #f8f9fa;
-            --dark-text: #333333;
-            --white: #ffffff;
-            --gray: #7f8c8d;
+            --primary-color: #1e293b;
+            --secondary-color: #0284c7;
+            --text-dark: #334155;
+            --text-light: #f8fafc;
+            --bg-light: #f1f5f9;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
         }
-
+        
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            color: var(--dark-text);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
-            background-color: var(--white);
         }
 
-        /* Header & Navigation */
+        /* Header Section */
         header {
-            background-color: var(--secondary-color);
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            color: var(--primary-color);
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .logo span {
-            color: var(--white);
-            font-size: 14px;
-            display: block;
-            font-weight: 300;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 25px;
-        }
-
-        nav ul li a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 20px;
-        }
-
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 25px;
-            max-width: 600px;
-        }
-
-        .btn {
             background-color: var(--primary-color);
-            color: var(--white);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
+            color: var(--text-light);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: #94a3b8;
+        }
+
+        .location-tag {
             display: inline-block;
+            margin-top: 10px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
-        .btn:hover {
-            background-color: #d35400;
-        }
-
-        /* Main Container layout */
+        /* Container & Grid Setup */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: var(--secondary-color);
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            padding: 40px 20px;
         }
 
         /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
+        .about-section {
+            background-color: var(--bg-card);
+            border-left: 5px solid var(--secondary-color);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .about-text p {
+        .about-section h2 {
+            color: var(--primary-color);
             margin-bottom: 15px;
-            font-size: 16px;
-            color: #555;
         }
 
-        .badge-box {
-            background-color: var(--light-bg);
-            padding: 20px;
-            border-left: 5px solid var(--primary-color);
-            border-radius: 4px;
+        .notice-box {
+            background-color: #fff7ed;
+            border: 1px solid #ffedd5;
+            color: #c2410c;
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 6px;
+            font-size: 0.95rem;
         }
 
-        .badge-box h4 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
+        /* Category Blocks */
+        .catalog-block {
+            margin-bottom: 50px;
         }
 
-        /* Products Categories Section */
-        .products-section {
-            background-color: var(--light-bg);
+        .block-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .block-subtitle {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-style: italic;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
         }
 
         .product-card {
-            background-color: var(--white);
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            border: 1px solid #eef2f3;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .product-info {
-            padding: 20px;
+        .product-card h3 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
         }
 
-        .product-info h3 {
-            color: var(--secondary-color);
+        .product-card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Interactive Inquiry Guide Table */
+        .guide-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 8px;
+            padding: 35px;
+            margin-top: 50px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        .guide-section h2 {
+            color: #f1f5f9;
             margin-bottom: 10px;
-            font-size: 18px;
         }
 
-        .product-info p {
-            color: var(--gray);
-            font-size: 14px;
-            margin-bottom: 15px;
+        .guide-section p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
         }
 
-        .tag {
-            display: inline-block;
-            background-color: #ebf5fb;
-            color: #2980b9;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* Factsheet Table */
-        .factsheet-table {
+        .guide-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            overflow: hidden;
         }
 
-        .factsheet-table th, .factsheet-table td {
-            padding: 15px 20px;
+        .guide-table th, .guide-table td {
             text-align: left;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .factsheet-table th {
-            background-color: var(--secondary-color);
-            color: var(--white);
+        .guide-table th {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--secondary-color);
             font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
         }
 
-        .factsheet-table tr:nth-child(even) {
-            background-color: var(--light-bg);
+        .guide-table tr:last-child td {
+            border-bottom: none;
         }
 
-        /* Contact Section */
-        .contact-box {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .contact-box h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .contact-details {
-            margin: 25px 0;
-            font-size: 18px;
-        }
-
-        .contact-details p {
-            margin-bottom: 10px;
+        .guide-table td strong {
+            color: #e2e8f0;
         }
 
         /* Footer */
         footer {
-            background-color: #1a252f;
-            color: var(--gray);
+            background-color: #0f172a;
+            color: #94a3b8;
             text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            border-top: 1px solid #2c3e50;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer p {
+            margin-bottom: 5px;
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav ul {
-                margin-top: 15px;
-            }
-            nav ul li {
-                margin: 0 10px;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h2 {
-                font-size: 32px;
-            }
+            header h1 { font-size: 2rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .guide-table th, .guide-table td { padding: 10px; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Section -->
     <header>
-        <div class="nav-container">
-            <div class="logo">
-                <h1>NEW GUJRAT TRACTORS</h1>
-                <span>Verified Industrial Supplier | Kolkata</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#factsheet">Factsheet</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>New Gujrat Tractors</h1>
+        <p>Road Roller Parts • Drive Gears • Rack & Pinion • Industrial Mechanical Components</p>
+        <span class="location-tag">Kolkata, West Bengal</span>
     </header>
 
-    <!-- Hero Banner Section -->
-    <section class="hero">
-        <h2>Reliable Heavy Machinery & Spares</h2>
-        <p>Serving the industrial market with premium Road Rollers, Drive Gears, and customized Machined Components for over a decade.</p>
-        <a href="#contact" class="btn">Get Best Price</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container">
-        <h2 class="section-title">About Our Company</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p><strong>New Gujrat Tractors</strong> is an established and highly trusted retailer based out of Kolkata, West Bengal. With over <strong>10 years</strong> of verified experience and industrial presence, we have carved a niche in providing top-tier machinery components and spare parts.</p>
-                <p>We pride ourselves on sourcing robust, heavy-duty parts that withstand the toughest structural environments. Whether you operate precision rack pinions or require comprehensive replacement spares for commercial road rollers, our catalog is optimized to meet strict industrial standards.</p>
+    <div class="container">
+        
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About New Gujrat Tractors</h2>
+            <p>New Gujrat Tractors is a Kolkata-based supplier of machinery and spare-part components. This digital catalogue focuses heavily on premium road-roller components, drive gears, rack & pinion structures, and associated heavy-duty industrial mechanical solutions.</p>
+            
+            <div class="notice-box">
+                <strong>Important Note:</strong> The details and visual descriptors contained within this reference portal represent generic product-category identifications. They do not imply immediate stock availability for direct matching. Always verify specific spacing, exact dimensions, and layout configurations before structuring orders. (Tractor applications and GST structures are explicitly excluded from this layout segment.)
             </div>
-            <div class="badge-box">
-                <h4>Why Choose Us?</h4>
-                <p>✔️ 10+ Years Trust Asset</p>
-                <p>✔️ Verified IndiaMART Member</p>
-                <p>✔️ Structured Proprietorship Firm</p>
-                <p>✔️ Located in West Bengal's Hub</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Products & Categories Section -->
-    <section id="products" class="products-section">
-        <div class="container">
-            <h2 class="section-title">Explore Our Categories</h2>
+        <!-- Category 1: Road Roller Spare Parts -->
+        <section class="catalog-block">
+            <h2 class="block-title">Road Roller Spare Parts</h2>
+            <p class="block-subtitle">Standard configuration modules structured for rapid category identification.</p>
             <div class="product-grid">
-                
-                <!-- Category 1 -->
+                <div class="product-card">
+                    <h3>Gear Sleeves</h3>
+                    <p>Sleeve components specifically machined for compatible road-roller drive and transmission assemblies.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Drive Gears</h3>
+                    <p>High-end gear-wheel elements tailored purposefully for robust mechanical power transmission.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Bushes & Sleeves</h3>
+                    <p>Essential support and sacrificial wear layers dedicated to spinning shafts and rotating machinery assemblies.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Shaft Components</h3>
+                    <p>Tough drive and transmission shafts cataloged by exact load application and operational dimensions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category 2: Drive Gears -->
+        <section class="catalog-block">
+            <h2 class="block-title">Drive Gears</h2>
+            <p class="block-subtitle">Standard transmission elements built for heavy industrial mechanical requirements.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Large Drive Gear</h3>
+                    <p>Oversized gear-wheel element built explicitly for extreme mechanical transmission workloads.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Gear & Shaft Assembly</h3>
+                    <p>Unified gear and shaft combinations built to drop seamlessly into target drive layouts.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Spur Gear</h3>
+                    <p>Traditional straight-tooth gear profiling engineered for everyday mechanical transmission uses.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Helical Gear</h3>
+                    <p>Angled-tooth layout designed to run smoothly and quietly during heavy power transfers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category 3: Rack & Pinion -->
+        <section class="catalog-block">
+            <h2 class="block-title">Rack & Pinion Assemblies</h2>
+
 
