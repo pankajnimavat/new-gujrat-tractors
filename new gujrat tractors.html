@@ -13,6 +13,7 @@
             --dark-text: #333333;
             --white: #ffffff;
             --gray: #7f8c8d;
+            --success: #2ecc71;
         }
 
         * {
@@ -48,11 +49,12 @@
             color: var(--primary-color);
             font-size: 24px;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .logo span {
             color: var(--white);
-            font-size: 14px;
+            font-size: 13px;
             display: block;
             font-weight: 300;
         }
@@ -80,7 +82,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
-            height: 60vh;
+            height: 55vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -109,15 +111,18 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
             display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             background-color: #d35400;
+            transform: translateY(-2px);
         }
 
-        /* Main Container layout */
+        /* Layout Architecture */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -143,7 +148,7 @@
             transform: translateX(-50%);
         }
 
-        /* About Section */
+        /* About Grid Layout */
         .about-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -158,24 +163,34 @@
 
         .badge-box {
             background-color: var(--light-bg);
-            padding: 20px;
+            padding: 25px;
             border-left: 5px solid var(--primary-color);
             border-radius: 4px;
         }
 
         .badge-box h4 {
             color: var(--secondary-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 18px;
         }
 
-        /* Products Categories Section */
+        .badge-box ul {
+            list-style: none;
+        }
+
+        .badge-box ul li {
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        /* Dynamic Product Grid */
         .products-section {
             background-color: var(--light-bg);
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
@@ -184,12 +199,20 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #eef2f3;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            height: 180px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
         }
 
         .product-info {
@@ -199,31 +222,42 @@
         .product-info h3 {
             color: var(--secondary-color);
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 19px;
         }
 
         .product-info p {
             color: var(--gray);
-            font-size: 14px;
+            font-size: 14.5px;
             margin-bottom: 15px;
+            height: 65px;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
         }
 
         .tag {
             display: inline-block;
             background-color: #ebf5fb;
             color: #2980b9;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
         }
 
-        /* Factsheet Table */
+        /* Factsheet Layout Table */
         .factsheet-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .factsheet-table th, .factsheet-table td {
@@ -238,40 +272,87 @@
             font-weight: 600;
         }
 
+        .factsheet-table tr:list-item {
+            background-color: var(--light-bg);
+        }
+
         .factsheet-table tr:nth-child(even) {
             background-color: var(--light-bg);
         }
 
-        /* Contact Section */
-        .contact-box {
+        /* Integrated UI Lead capture form */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             background: var(--secondary-color);
             color: var(--white);
             padding: 40px;
+            border-radius: 12px;
+        }
+
+        .contact-info-panel h3 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-info-panel p {
+            margin-bottom: 25px;
+            color: #bdc3c7;
+        }
+
+        .detail-item {
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .contact-form-panel {
+            background: var(--white);
+            padding: 30px;
             border-radius: 8px;
+            color: var(--dark-text);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        #form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            font-weight: 600;
             text-align: center;
         }
 
-        .contact-box h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .contact-details {
-            margin: 25px 0;
-            font-size: 18px;
-        }
-
-        .contact-details p {
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
+        /* Footer Architecture */
         footer {
             background-color: #1a252f;
             color: var(--gray);
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 14px;
             border-top: 1px solid #2c3e50;
         }
@@ -288,7 +369,7 @@
             nav ul li {
                 margin: 0 10px;
             }
-            .about-grid {
+            .about-grid, .contact-layout {
                 grid-template-columns: 1fr;
             }
             .hero h2 {
@@ -299,54 +380,13 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo">
                 <h1>NEW GUJRAT TRACTORS</h1>
-                <span>Verified Industrial Supplier | Kolkata</span>
+                <span>Verified IndiaMART Member | Kolkata</span>
             </div>
             <nav>
                 <ul>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#factsheet">Factsheet</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Banner Section -->
-    <section class="hero">
-        <h2>Reliable Heavy Machinery & Spares</h2>
-        <p>Serving the industrial market with premium Road Rollers, Drive Gears, and customized Machined Components for over a decade.</p>
-        <a href="#contact" class="btn">Get Best Price</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container">
-        <h2 class="section-title">About Our Company</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p><strong>New Gujrat Tractors</strong> is an established and highly trusted retailer based out of Kolkata, West Bengal. With over <strong>10 years</strong> of verified experience and industrial presence, we have carved a niche in providing top-tier machinery components and spare parts.</p>
-                <p>We pride ourselves on sourcing robust, heavy-duty parts that withstand the toughest structural environments. Whether you operate precision rack pinions or require comprehensive replacement spares for commercial road rollers, our catalog is optimized to meet strict industrial standards.</p>
-            </div>
-            <div class="badge-box">
-                <h4>Why Choose Us?</h4>
-                <p>✔️ 10+ Years Trust Asset</p>
-                <p>✔️ Verified IndiaMART Member</p>
-                <p>✔️ Structured Proprietorship Firm</p>
-                <p>✔️ Located in West Bengal's Hub</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products & Categories Section -->
-    <section id="products" class="products-section">
-        <div class="container">
-            <h2 class="section-title">Explore Our Categories</h2>
-            <div class="product-grid">
-                
-                <!-- Category 1 -->
-
